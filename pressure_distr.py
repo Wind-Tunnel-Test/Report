@@ -9,10 +9,10 @@ wb = xlrd.open_workbook(loc)
 sheet = wb.sheet_by_index(0)
 
 AoA = []
-data = np.zeros((45,48))
+data = np.zeros((44,48))
 print(data)
 
-for p in range(1,45):
+for p in range(1,43):
 
     AoA.append(sheet.cell_value(1,p))
 
@@ -20,19 +20,29 @@ print(AoA)
 
 #Retrieve data from Excel file
 
-for i in range(0,45):
+for i in range(0,43):
 
     for j in range(0,48):
 
         data[i,j] = sheet.cell_value(j+2,i)
 
-for k in range(1,45):
+for k in range(1,43):
 
-    Alpha = str(round((AoA[k-1]), 1))
-    number = str()
+    if AoA[k-1] in AoA[0:34]:
 
-    Title = 'Pressure Distribution for AoA {} degrees' .format(Alpha)
-    name = 'pressuregraphAoA{}.png' .format(Alpha)
+        Alpha = str(round((AoA[k-1]), 1))
+
+        Title = 'Pressure Distribution for AoA {} degrees'.format(Alpha)
+        name = 'pressuregraphAoA{}.png'.format(Alpha)
+
+    else:
+
+        Alpha = str(round((AoA[k-1]), 1))
+
+        Title = 'Pressure Distribution for AoA {} degrees stalled' .format(Alpha)
+        name = 'pressuregraphAoA{}stalled.png' .format(Alpha)
+
+    #print(name)
 
     plt.plot(data[0], data[k], marker='.')
     plt.xlabel('Chord [%]')
