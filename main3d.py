@@ -4,11 +4,14 @@ from matplotlib import pyplot as plt
 loc1 = "corr_test3d.xlsx"
 loc2 = "corr_test2d.xlsx"
 
+
 wb1 = xlrd.open_workbook(loc1)
 wb2 = xlrd.open_workbook(loc2)
 
+
 sheet1 = wb1.sheet_by_index(0)
 sheet2 = wb2.sheet_by_index(0)
+
 
 # define data sets
 Alpha = []
@@ -64,8 +67,8 @@ plt.show()
 # Drag polar for a finite wing
 
 plt.plot(CDcut, CLcut, marker='.')
-plt.xlabel("Cd")
-plt.ylabel("Cl")
+plt.xlabel("Cd [-]")
+plt.ylabel("Cl [-]")
 plt.title("Drag polar for the finite wing")
 plt.grid()
 
@@ -94,8 +97,8 @@ plt.show()
 # Drag polar for a finite wing
 
 plt.plot(Cdcut, Clcut, marker='.')
-plt.xlabel("Cd")
-plt.ylabel("Cl")
+plt.xlabel("Cd [-]")
+plt.ylabel("Cl [-]")
 plt.title("Drag polar for the infinite wing")
 plt.grid()
 
