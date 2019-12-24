@@ -81,11 +81,14 @@ CDcut1 = CD1[0:36]
 Clcut1 = Cl1[0:29]
 Cdcut1 = Cd1[0:29]
 
+label1 = ('experiment', 'XFLR5')
+label2 = ('experiment', 'Xfoil')
 
 # Lift Polar of a finite wing
 
 plt.plot(Alpha1, CL1, marker='.', color='b')
 plt.plot(Alpha2, CL2, marker='^', color='r')
+plt.legend(label1)
 plt.xlabel("Alpha [deg]")
 plt.ylabel("Cl [-]")
 plt.title("Lift Polar for the 3D case")
@@ -106,6 +109,7 @@ plt.show()
 
 plt.plot(Alpha1, CM1, marker='.', color='b')
 plt.plot(Alpha2, CM2, marker='^', color='r')
+plt.legend(label1)
 plt.xlabel("Alpha [deg]")
 plt.ylabel("Cm [-]")
 plt.title("Moment Polar for the 3D case")
@@ -118,6 +122,7 @@ plt.show()
 
 plt.plot(CDcut1, CLcut1, marker='.', color='b')
 plt.plot(CD2, CL2, marker='^', color='r')
+plt.legend(label1)
 plt.xlabel("Cd [-]")
 plt.ylabel("Cl [-]")
 plt.title("Drag Polar for the 3D case")
@@ -130,6 +135,7 @@ plt.show()
 
 plt.plot(Alpha1, CD1, marker='.', color='b')
 plt.plot(Alpha2, CD2, marker='^', color='r')
+plt.legend(label1)
 plt.xlabel("Alpha [deg]")
 plt.ylabel("CD [-]")
 plt.title("Drag curve for the 3D case")
@@ -153,6 +159,7 @@ plt.show()
 
 plt.plot(alpha1, Cl1, marker='.', color='b')
 plt.plot(alpha2, Cl2, marker='^', color='r')
+plt.legend(label2)
 plt.xlabel("Alpha [deg]")
 plt.ylabel("Cl [-]")
 plt.title("Lift Polar for the 2D case")
@@ -172,7 +179,8 @@ plt.show()
 # Drag curve for the 2D case
 
 plt.plot(alpha1, Cd1, marker='.', color='b')
-plt.plot(alpha2, Cd2, marker='^', color='b')
+plt.plot(alpha2, Cd2, marker='^', color='r')
+plt.legend(label2)
 plt.xlabel("Alpha [deg]")
 plt.ylabel("Cd [-]")
 plt.title("Drag Curve for the 2D case")
@@ -193,6 +201,7 @@ plt.show()
 
 plt.plot(Cdcut1, Clcut1, marker='.', color='b')
 plt.plot(Cd2, Cl2, marker='^', color='r')
+plt.legend(label2)
 plt.xlabel("Cd [-]")
 plt.ylabel("Cl [-]")
 plt.title("Drag Polar for the 2D case")
@@ -205,6 +214,7 @@ plt.show()
 
 plt.plot(alpha1, Cm1, marker='.', color='b')
 plt.plot(alpha2, Cm2, marker='^', color='r')
+plt.legend(label2)
 plt.xlabel("alpha [deg]")
 plt.ylabel("Cm [-]")
 plt.title("Moment Polar for the 2D case")
